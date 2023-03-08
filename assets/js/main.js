@@ -72,3 +72,39 @@ $(document).on("click", ".lang-link", function () {
     .siblings()
     .removeClass("active");
 });
+
+/* ---------------------------- lick link fadeout --------------------------- */
+
+$(document).on("click", 'a[href^="#"]', function (e) {
+  e.preventDefault();
+});
+
+$(document).on(
+  "click",
+  'a:not([href^="#"]):not([target]):not([href^="mailto"])',
+  function (e) {
+    e.preventDefault();
+    const url = $(this).attr("href");
+
+    if (url !== "") {
+      const idx = url.indexOf("#");
+      const hash = idx != -1 ? url.substring(idx) : "";
+
+      if ($(hash).length > 0) {
+        $("html, body").animate(
+          {
+            scrollTop: $(hash).offset().top,
+          },
+          300
+        );
+        return false;
+      }
+
+      $("body").addClass("fadeout");
+      setTimeout(function () {
+        window.location = url;
+      }, 600);
+    }
+    return false;
+  }
+);
