@@ -6,17 +6,36 @@
   margin-top: 180px;
   margin-bottom: 100px;
 
+  @include maxW(834px) {
+    margin-top: 120px;
+    margin-bottom: 90px;
+  }
+
   &__wrapper {
     padding: 0 35px;
     display: flex;
+
+    @include maxW(834px) {
+      padding: 0 15px;
+      display: block;
+    }
   }
 
   &__left {
     width: 50%;
+
+    @include maxW(834px) {
+      width: 100%;
+    }
   }
 
   &__right {
     flex: 1;
+
+    @include maxW(834px) {
+      padding-left: 95px;
+      padding-top: 80px;
+    }
   }
 
   &__tabs {
@@ -40,6 +59,10 @@
         background-color: $black-cl;
         border-radius: 50%;
       }
+    }
+
+    @include maxW(834px) {
+      font-size: 1.7rem;
     }
   }
 
@@ -66,6 +89,16 @@
     span {
       opacity: 0.3;
     }
+
+    @include maxW(834px) {
+      position: fixed;
+      writing-mode: vertical-rl;
+      margin-top: 87px;
+
+      p {
+        font-size: 1.3rem;
+      }
+    }
   }
 
   &__items {
@@ -86,6 +119,12 @@
     font-weight: 400;
     line-height: 1.67;
     margin-bottom: 25px;
+
+    @include maxW(834px) {
+      font-size: 1.6rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
   }
 
   &__profile {
@@ -97,6 +136,11 @@
     a {
       text-decoration: underline;
     }
+
+    @include maxW(834px) {
+      font-size: 1.3rem;
+      line-height: 1.77;
+    }
   }
 
   &__info {
@@ -107,10 +151,23 @@
       font-size: 1.4rem;
       line-height: 1.93;
     }
+
+    @include maxW(834px) {
+      margin-bottom: 15px;
+
+      p {
+        font-size: 1.3rem;
+        line-height: 1.77;
+      }
+    }
   }
 
   &__year {
     width: 15%;
+
+    @include maxW(834px) {
+      width: 22%;
+    }
   }
 
   &__content {
@@ -119,6 +176,10 @@
 
   &__fields {
     margin-bottom: 45px;
+
+    @include maxW(834px) {
+      margin-bottom: 35px;
+    }
   }
 
   .lang-en,
