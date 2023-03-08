@@ -18,7 +18,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://tks.studio1014.jp/assets/img/">
 
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./assets/css/style.min.css?ver=1.0">
 
     <!-- @main fonts -->
@@ -41,23 +41,127 @@
 
 <body>
     <!-- @header -->
-    <header class="c-header"></header>
+    <header class="c-header">
+        <div class="c-header__container">
+            <div class="c-header__wrapper">
+                <div class="c-header__left">
+                    <a href="/" class="is-hidden">Takashi Kawashima Studio</a>
+                </div>
+
+                <div class="c-header__right">
+                    <a href="#" data-index-toggler>index</a>
+                    <a href="./info.html">info</a>
+                </div>
+            </div>
+        </div>
+    </header>
     <!-- @@header -->
 
+    <!-- @index -->
+    <div class="p-index">
+        <div class="p-index__container">
+            <div class="p-index__wrapper" data-index>
+                <div class="p-index__top">
+                    <div class="p-index__left">
+                        <a href="/">Takashi Kawashima Studio</a>
+                    </div>
+
+                    <div class="p-index__right">
+                        <p data-index-toggler>close</p>
+                    </div>
+                </div>
+
+                <div class="p-index__content">
+                    <div class="p-index__list" id="index-list">
+
+                        <!-- <a href="./works.html" class="p-index__item">
+                            <h2>window : Interaction project with Wilson Oreyema</h2>
+                            <div class="p-index__brand">
+                                <p class="p-index__client">THE NORTH FACE</p>
+                                <span>|</span>
+                                <p class="p-index__genre">Philanthropy</p>
+                            </div>
+
+                            <figure class="p-index__thumbnail">
+                                <img src="./assets/img/thumbnail-1.jpg"
+                                    alt="window : Interaction project with Wilson Oreyema">
+                            </figure>
+                        </a> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @@index -->
+
     <!-- @main -->
-    <main class="p-home">
-        <!-- @section 1 -->
-        <section>have a nice day!!</section>
-        <!-- @@section 1 -->
+    <main>
+        <!-- @c-loading -->
+        <div class="c-loading loaded">
+            <div class="c-loading__title">
+                <h1>Takashi Kawashima <br class="sp-only">Studio</h1>
+            </div>
+        </div>
+        <!-- @@loading -->
+
+        <!-- @section top -->
+        <section class="p-top">
+            <div class="p-top__container">
+                <div class="p-top__wrapper">
+                    <div class="p-top__list">
+                        <div class="p-top__item">
+                            index
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @@section top -->
     </main>
     <!-- @@main -->
 
     <!-- @footer -->
-    <footer class="c-footer"></footer>
+    <footer class="c-footer">
+        <div class="c-footer__container">
+            <div class="c-footer__wrapper">
+                <div class="c-footer__left">
+                    <div class="c-footer__backtotop">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15.414" height="8.414" viewBox="0 0 15.414 8.414"
+                            aria-label="back to top">
+                            <g id="Group_113" data-name="Group 113" transform="translate(-324.293 -8890.293)">
+                                <line id="Line_18" data-name="Line 18" x1="7" y2="7" transform="translate(325 8891)"
+                                    fill="none" stroke="#000" stroke-linecap="square" stroke-width="1" />
+                                <line id="Line_19" data-name="Line 19" x2="7" y2="7" transform="translate(332 8891)"
+                                    fill="none" stroke="#000" stroke-linecap="square" stroke-width="1" />
+                            </g>
+                        </svg>
+
+                    </div>
+                </div>
+
+                <div class="c-footer__center">
+                    <a href="mailto:someone@example.com" class="c-footer__contact">
+                        contact
+                    </a>
+                    <a href="#" target="_blank" class="c-footer__instagram">
+                        instagram
+                    </a>
+                </div>
+
+                <div class="c-footer__right">
+                    <p>©︎ Takashi Kawashima Studio</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- @@footer -->
 
     <!-- @script -->
+    <script src="./assets/js/libs.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/data.js"></script>
     <!-- @@script -->
 </body>
 

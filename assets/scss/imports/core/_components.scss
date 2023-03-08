@@ -1,2 +1,212 @@
 /* components
 ------------------------------------------------------------*/
+
+/* --------------------------------- loading -------------------------------- */
+.c-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: var(--app-height);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $white-cl;
+
+  &.loaded {
+    pointer-events: none;
+    background-color: transparent;
+  }
+
+  &__title {
+    h1 {
+      font-family: $test-domaine-fonts;
+      font-size: 6.2rem;
+      font-weight: 400;
+      text-align: center;
+
+      @include maxW(834px) {
+        font-size: 3.2rem;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+/* -------------------------------- unilities ------------------------------- */
+.is-hidden {
+  display: none !important;
+}
+
+/* ---------------------------------- index --------------------------------- */
+.p-index {
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: var(--app-height);
+    z-index: 999;
+    overflow-y: scroll;
+
+    background-color: #222;
+    color: #e6e6e6;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: all 0.4s ease-in-out;
+
+    &.toggle {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  &__top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include maxW(834px) {
+      padding: 15px;
+    }
+  }
+
+  &__left {
+    a {
+      font-family: $test-domaine-fonts;
+      font-size: 2.2rem;
+      font-weight: 400;
+
+      @include maxW(834px) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__right {
+    p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        opacity: 0.7;
+      }
+
+      @include maxW(834px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__content {
+    padding: 180px 35px 45px;
+
+    @include maxW(834px) {
+      padding: 120px 15px 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      a {
+        opacity: 0.2;
+
+        @include maxW(834px) {
+          opacity: 1;
+        }
+      }
+    }
+
+    a:hover {
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    h2 {
+      font-family: $test-domaine-fonts;
+      font-size: 2.4rem;
+      line-height: 1.58;
+      font-weight: 400;
+
+      @include maxW(834px) {
+        font-size: 1.9rem;
+        line-height: 1.4;
+      }
+    }
+
+    &:hover {
+      .p-index__thumbnail {
+        opacity: 1;
+        visibility: visible;
+
+        img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__brand {
+    font-size: 1.4rem;
+    line-height: 1.86;
+    font-weight: 500;
+    opacity: 0.5;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @include maxW(834px) {
+      font-size: 1.2rem;
+      line-height: 2;
+    }
+  }
+
+  &__thumbnail {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+
+    width: 70%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include maxW(834px) {
+      display: none;
+    }
+  }
+}

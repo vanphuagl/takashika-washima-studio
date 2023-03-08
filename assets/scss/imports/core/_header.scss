@@ -2,4 +2,50 @@
 ------------------------------------------------------------*/
 
 .c-header {
+  &__wrapper {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px 35px;
+
+    @include maxW(834px) {
+      padding: 15px;
+    }
+  }
+
+  &__left {
+    a {
+      font-family: $test-domaine-fonts;
+      font-size: 2.2rem;
+      font-weight: 400;
+
+      @include maxW(834px) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__right {
+    a {
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+
+      @include maxW(834px) {
+        font-size: 1.2rem;
+
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }
