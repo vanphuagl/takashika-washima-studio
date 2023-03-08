@@ -42,7 +42,6 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 1.3rem;
-    font-weight: 500;
 
     @include mid(true);
     gap: 20px;
@@ -56,7 +55,6 @@
   &__right {
     text-align: right;
     font-size: 1.2rem;
-    font-weight: 500;
 
     @include maxW(834px) {
       font-size: 1rem;

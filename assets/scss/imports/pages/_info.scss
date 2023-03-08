@@ -54,7 +54,6 @@
       opacity: 0.3;
       text-transform: uppercase;
       font-size: 1.4rem;
-      font-weight: 500;
       cursor: pointer;
 
       transition: all 0.3s linear;
@@ -86,14 +85,48 @@
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.67;
+    margin-bottom: 25px;
   }
 
-  .language {
+  &__profile {
+    font-size: 1.4rem;
+    line-height: 1.89;
+
+    margin-bottom: 45px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-start;
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.93;
+    }
+  }
+
+  &__year {
+    width: 15%;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__fields {
+    margin-bottom: 45px;
+  }
+
+  .lang-en,
+  .lang-jp {
     display: none;
 
     opacity: 0;
-    transform: translateY(15px);
-    animation: fadeIn 0.5s ease 1 forwards;
+    animation: fadeIn 1s ease-in-out 1 forwards;
 
     &.active {
       display: block;
