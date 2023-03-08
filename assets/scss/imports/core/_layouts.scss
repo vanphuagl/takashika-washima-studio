@@ -1,0 +1,43 @@
+/* layout
+------------------------------------------------------------*/
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $white-cl;
+  font-family: $main-fonts;
+  font-style: normal;
+  color: $main-text-cl;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -ms-overflow-style: none;
+}
+
+//-------------------------------------------------------
+.l-container {
+  width: $base-width;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sp-only {
+  display: none !important;
+}
+@include maxW(834px) {
+  .pc-only {
+      display: none !important;
+  }
+
+  .sp-only {
+      display: block !important;
+  }
+}
+//-------------------------------------------------------
