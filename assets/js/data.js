@@ -105,7 +105,7 @@ const indexList = document.querySelector("#index-list");
 const renderIndex = (data) => {
   data.forEach((item) => {
     let article = `
-        <a href="./works.html" class="p-index__item">
+        <a href="./works-slide.html" class="p-index__item">
             <h2>${item.title}</h2>
             <div class="p-index__brand">
                 <p class="p-index__client">${item.clientName}</p>
