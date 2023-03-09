@@ -34,14 +34,9 @@
     }
 
     .c-header__right {
-      p {
-        font-size: 1.3rem;
-      }
-
       @include maxW(834px) {
         flex: 1;
         p {
-          font-size: 1.2rem;
           text-align: right;
         }
       }
@@ -52,6 +47,7 @@
     h2 {
       font-family: $test-domaine-fonts;
       font-weight: 400;
+      font-size: 2.2rem;
     }
 
     a {
@@ -65,17 +61,19 @@
   }
 
   &__right {
+    font-size: 1.3rem;
     a {
-      font-size: 1.3rem;
       text-transform: uppercase;
 
       &:first-child {
         margin-right: 20px;
       }
+    }
 
-      @include maxW(834px) {
-        font-size: 1.2rem;
+    @include maxW(834px) {
+      font-size: 1.2rem;
 
+      a {
         &:first-child {
           margin-right: 10px;
         }

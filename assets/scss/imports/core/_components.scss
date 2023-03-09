@@ -299,6 +299,26 @@
     }
   }
 
+  &.work-scroll {
+    .p-text__close {
+      right: 35px;
+      top: 25px;
+    }
+
+    .p-text__content {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      transform: unset;
+    }
+  }
+
+  &__title {
+    position: fixed;
+    left: 35px;
+    top: 25px;
+  }
+
   &__close {
     cursor: pointer;
 
@@ -412,6 +432,29 @@
           line-height: 1.79;
         }
       }
+    }
+  }
+}
+
+.work-scroll-title {
+  h2 {
+    font-family: $test-domaine-fonts;
+    font-weight: 400;
+    font-size: 2.2rem;
+  }
+
+  .text-sub {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 1.4rem;
+    line-height: 1.86;
+    margin-top: 10px;
+
+    span {
+      opacity: 0.3;
+      margin-top: -3px;
     }
   }
 }

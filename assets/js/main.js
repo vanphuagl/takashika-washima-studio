@@ -52,11 +52,15 @@ $(window).on("load", function () {
       stagger: 0.4,
       delay: 0.2,
     })
-    .to(".c-header, .c-footer", {
-      duration: 0.8,
-      opacity: 1,
-      delay: 0.2,
-    }, "-=0.4")
+    .to(
+      ".c-header, .c-footer",
+      {
+        duration: 0.8,
+        opacity: 1,
+        delay: 0.2,
+      },
+      "-=0.4"
+    )
     .to(
       ".c-loading.work-page > .c-loading__title",
       {
@@ -100,13 +104,14 @@ addEventOnElements(indexTogglers, "click", toggleIndex);
 
 const scrollTop = document.querySelector(".c-footer__backtotop");
 
-const scrollToTop = function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+if (scrollTop) {
+  scrollTop.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
-};
-addEventOnElements(scrollTop, "click", scrollToTop);
+}
 
 /* ------------------------------- tabs switch ------------------------------ */
 
