@@ -37,6 +37,7 @@ const [indexTogglers, index] = [
 
 const toggleIndex = function () {
   index.classList.toggle("toggle");
+  document.body.classList.toggle("active");
 };
 
 addEventOnElements(indexTogglers, "click", toggleIndex);

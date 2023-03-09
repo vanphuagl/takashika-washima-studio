@@ -29,6 +29,13 @@
     }
   }
 
+  &__fixed {
+    position: fixed;
+    @include maxW(834px) {
+      position: unset;
+    }
+  }
+
   &__right {
     flex: 1;
 
