@@ -28,6 +28,40 @@ appHeight();
   });
 });
 
+$(window).on("load", function () {
+  const tl = gsap.timeline();
+
+  tl.to(".c-loading__title", {
+    duration: 1,
+    opacity: 1,
+    delay: 1,
+  })
+    .to(".c-loading", {
+      duration: 1,
+      background: "transparent",
+      delay: 0.2,
+    })
+    .set(".c-loading", {
+      pointerEvents: "none",
+      delay: 0,
+    })
+    .to(".c-loading.work-loader > .c-loading__title", {
+      duration: 0.5,
+      opacity: 0,
+      delay: 0.4,
+    })
+    .from(".animate-this", {
+      duration: 1,
+      opacity: 0,
+      stagger: 0.4,
+      delay: 0.2,
+    })
+    .to(".c-header, .c-footer", {
+      duration: 1,
+      opacity: 1,
+    });
+});
+
 /* ------------------------------ toggler index ----------------------------- */
 
 const [indexTogglers, index] = [

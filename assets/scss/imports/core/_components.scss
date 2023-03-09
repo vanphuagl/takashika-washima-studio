@@ -14,14 +14,34 @@
   align-items: center;
   justify-content: center;
 
-  background-color: $white-cl;
+  background-color: $gray-cl;
 
-  &.loaded {
-    pointer-events: none;
-    background-color: transparent;
+  &.work-loader {
+    justify-content: flex-start;
+    padding: 0 35px;
+
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.5;
+    }
+  }
+
+  &__sub {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 1.4rem;
+    line-height: 1.86;
+
+    span {
+      opacity: 0.3;
+      margin-top: -3px;
+    }
   }
 
   &__title {
+    opacity: 0;
     h1 {
       font-family: $test-domaine-fonts;
       font-size: 6.2rem;
@@ -177,9 +197,17 @@
     align-items: center;
     gap: 15px;
 
+    span {
+      margin-top: -2px;
+    }
+
     @include maxW(834px) {
       font-size: 1.2rem;
       line-height: 2;
+
+      span {
+        margin-top: 0;
+      }
     }
   }
 

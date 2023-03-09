@@ -2,6 +2,8 @@
 ------------------------------------------------------------*/
 
 .c-footer {
+  opacity: 0;
+  
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
