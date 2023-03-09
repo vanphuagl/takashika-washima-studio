@@ -30,15 +30,39 @@
 
     padding: 100px 0;
 
+    @include maxW(834px) {
+      padding: 224px 30px;
+    }
+
+    .swiper-slide.swiper-slide-active {
+      .caption {
+        opacity: 1;
+      }
+    }
+
     .caption {
       position: absolute;
       width: 100%;
       bottom: -70px;
       text-align: center;
 
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+
       h2 {
         font-size: 1.3rem;
         font-weight: 400;
+      }
+
+      @include maxW(834px) {
+        bottom: -209px;
+        left: 80px;
+        width: 50%;
+        text-align: start;
+
+        h2 {
+          font-size: 1.2rem;
+        }
       }
     }
 
@@ -95,5 +119,11 @@
 
     display: flex;
     align-items: center;
+
+    @include maxW(834px) {
+      bottom: 15px;
+      left: 15px;
+      font-size: 1.2rem;
+    }
   }
 }

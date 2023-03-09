@@ -24,11 +24,26 @@
       h2 {
         font-size: 1.7rem;
       }
+
+      @include maxW(834px) {
+        width: 60%;
+        h2 {
+          font-size: 1.6rem;
+        }
+      }
     }
 
     .c-header__right {
       p {
         font-size: 1.3rem;
+      }
+
+      @include maxW(834px) {
+        flex: 1;
+        p {
+          font-size: 1.2rem;
+          text-align: right;
+        }
       }
     }
   }

@@ -36,7 +36,7 @@ $(window).on("load", function () {
   tl.to(".c-loading__title", {
     duration: 1,
     opacity: 1,
-    delay: 1,
+    delay: 0.4,
   })
     .to(".c-loading", {
       duration: 1,
@@ -45,26 +45,44 @@ $(window).on("load", function () {
     })
     .set(".c-loading", {
       pointerEvents: "none",
-      delay: 0,
     })
     .from(".animate-this", {
       duration: 1,
       opacity: 0,
       stagger: 0.4,
-      delay: 0.5,
-    })
-    .to(".c-loading.work-page > .c-loading__title", {
-      duration: 0.5,
-      opacity: 0,
-      delay: 0.4,
+      delay: 0.2,
     })
     .to(".c-header, .c-footer", {
-      duration: 1,
+      duration: 0.8,
       opacity: 1,
-    });
+      delay: 0.2,
+    }, "-=0.4")
+    .to(
+      ".c-loading.work-page > .c-loading__title",
+      {
+        duration: 0.5,
+        opacity: 0,
+        delay: 0.2,
+      },
+      "-=0.8"
+    );
 });
 
 /* ------------------------------ toggler index ----------------------------- */
+
+const [textTogglers, text] = [
+  document.querySelectorAll("[data-text-toggler]"),
+  document.querySelector("[data-text]"),
+];
+
+const toggleText = function () {
+  text.classList.toggle("toggle");
+  document.body.classList.toggle("active");
+};
+
+addEventOnElements(textTogglers, "click", toggleText);
+
+/* ------------------------------ toggler text ------------------------------ */
 
 const [indexTogglers, index] = [
   document.querySelectorAll("[data-index-toggler]"),
@@ -167,27 +185,30 @@ const swiperWorkFunction = () => {
       },
       speed: 600,
       initialSlide: 1,
-      slidesPerView: 1.58,
       centeredSlides: true,
       breakpoints: {
         0: {
-          spaceBetween: 10,
-          draggable: true,
+          spaceBetween: 30,
+          allowTouchMove: true,
+          slidesPerView: 1,
         },
         835: {
           spaceBetween: 200,
-          draggable: false,
+          allowTouchMove: false,
+          slidesPerView: 1.58,
         },
       },
       on: {
         slideChange: function () {
           let currentSlide = this.realIndex + 1;
-          document.querySelector(".current-slide").innerHTML = "( " + currentSlide;
+          document.querySelector(".current-slide").innerHTML =
+            "( " + currentSlide;
         },
         beforeInit: function () {
           let numOfSlides =
             this.wrapperEl.querySelectorAll(".swiper-slide").length;
-          document.querySelector(".total-slides").innerHTML = numOfSlides + " )";
+          document.querySelector(".total-slides").innerHTML =
+            numOfSlides + " )";
         },
       },
     });
