@@ -3,8 +3,10 @@
 // add event on multiple element
 
 const addEventOnElements = function (elements, eventType, callback) {
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener(eventType, callback);
+  if (elements) {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].addEventListener(eventType, callback);
+    }
   }
 };
 
@@ -45,7 +47,7 @@ $(window).on("load", function () {
       pointerEvents: "none",
       delay: 0,
     })
-    .to(".c-loading.work-loader > .c-loading__title", {
+    .to(".c-loading.work-page > .c-loading__title", {
       duration: 0.5,
       opacity: 0,
       delay: 0.4,
@@ -79,12 +81,14 @@ addEventOnElements(indexTogglers, "click", toggleIndex);
 /* ------------------------------ scroll to top ----------------------------- */
 
 const scrollTop = document.querySelector(".c-footer__backtotop");
-scrollTop.addEventListener("click", function () {
+
+const scrollToTop = function () {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
-});
+};
+addEventOnElements(scrollTop, "click", scrollToTop);
 
 /* ------------------------------- tabs switch ------------------------------ */
 
@@ -143,3 +147,154 @@ $(document).on(
     return false;
   }
 );
+
+/* ------------------------------- work swiper ------------------------------ */
+
+const deactiveButton = () => {
+  if ($(".button-swiper").hasClass("swiper-button-disabled")) {
+    $(".button-swiper").removeClass("swiper-button-disabled");
+    $(".button-swiper").attr("aria-disabled", "false");
+    $(".button-swiper").removeAttr("disabled");
+  }
+};
+
+const swiperWorkFunction = () => {
+  if (document.getElementById("work-swiper")) {
+    const swiper = new Swiper("#work-swiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      speed: 600,
+      initialSlide: 1,
+      slidesPerView: 1.58,
+      centeredSlides: true,
+      breakpoints: {
+        0: {
+          spaceBetween: 10,
+          draggable: true,
+        },
+        835: {
+          spaceBetween: 200,
+          draggable: false,
+        },
+      },
+      on: {
+        slideChange: function () {
+          let currentSlide = this.realIndex + 1;
+          document.querySelector(".current-slide").innerHTML = "(" + currentSlide;
+        },
+        beforeInit: function () {
+          let numOfSlides =
+            this.wrapperEl.querySelectorAll(".swiper-slide").length;
+          document.querySelector(".total-slides").innerHTML = "/" + numOfSlides + ")";
+        },
+      },
+    });
+
+    // deactive button control
+    deactiveButton();
+    swiper.on("slideNextTransitionStart", function () {
+      deactiveButton();
+    });
+    swiper.on("slidePrevTransitionStart", function () {
+      deactiveButton();
+    });
+  }
+};
+
+swiperWorkFunction();
+
+/* ------------------------------ custom cursor ----------------------------- */
+
+const cursorPrev = document.querySelector(".cursor-prev");
+const cursorNext = document.querySelector(".cursor-next");
+
+function mousemoveHandler(e) {
+  const target = e.target;
+  const tl = gsap.timeline({
+    defaults: {
+      x: e.clientX,
+      y: e.clientY,
+      ease: "power2.out",
+    },
+  });
+
+  if (
+    document.querySelector(".swiper-button-next") &&
+    document.querySelector(".swiper-button-prev")
+  ) {
+    // hover section slider
+    if (
+      target.tagName.toLowerCase() === "button" &&
+      target.closest(".swiper-button-next")
+    ) {
+      tl.to(cursorPrev, {
+        opacity: 0,
+      }).to(
+        cursorNext,
+        {
+          opacity: 1,
+        },
+        "-=0.5"
+      );
+    } else if (
+      target.tagName.toLowerCase() === "button" &&
+      target.closest(".swiper-button-prev")
+    ) {
+      tl.to(cursorPrev, {
+        opacity: 1,
+      }).to(
+        cursorNext,
+        {
+          opacity: 0,
+        },
+        "-=0.5"
+      );
+    } else {
+      tl.to(".cursor", {
+        opacity: 0,
+      });
+    }
+  }
+}
+
+function mouseleaveHandler() {
+  if (document.querySelector(".cursor")) {
+    gsap.to(".cursor", {
+      opacity: 0,
+    });
+  }
+}
+
+document.addEventListener("mousemove", mousemoveHandler);
+document.addEventListener("mouseleave", mouseleaveHandler);
+
+/* ---------------------- catch select href not working --------------------- */
+
+$(function () {
+  let isIOS =
+    (/iPad|iPhone|iPod/.test(navigator.platform) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) &&
+    !window.MSStream;
+  if (isIOS) {
+    $("a").on("click touchend", function () {
+      let link = $(this).attr("href");
+      let target = $(this).attr("target");
+      if (target === "_blank") {
+        window.open(link, "blank"); // opens in new window as requested
+        return false; // prevent anchor click
+      }
+    });
+  }
+});
+
+/* ------------------------------- error page ------------------------------- */
+if (document.querySelector(".p-404__wrapper")) {
+  gsap.from(".p-404__wrapper > span", 1.5, {
+    top: "-100vh",
+    ease: "bounce.out",
+    delay: 1,
+    stagger: 0.2,
+  });
+}

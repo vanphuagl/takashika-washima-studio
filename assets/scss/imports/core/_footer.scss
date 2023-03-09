@@ -3,7 +3,9 @@
 
 .c-footer {
   opacity: 0;
-  
+  position: relative;
+  z-index: 9;
+
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -51,6 +53,19 @@
     @include maxW(834px) {
       font-size: 1.1rem;
       gap: 10px;
+    }
+  }
+
+  &.work-slide {
+    .c-footer__right {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+
+      a {
+        &:first-child {
+          margin-right: 20px;
+        }
+      }
     }
   }
 

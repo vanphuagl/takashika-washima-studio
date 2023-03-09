@@ -16,7 +16,7 @@
 
   background-color: $gray-cl;
 
-  &.work-loader {
+  &.work-page {
     justify-content: flex-start;
     padding: 0 35px;
 
@@ -56,12 +56,26 @@
   }
 }
 
+/* --------------------------------- cursor --------------------------------- */
+
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: -15px;
+  left: -13px;
+  z-index: 99;
+  mix-blend-mode: difference;
+}
+
 /* -------------------------------- unilities ------------------------------- */
+
 .is-hidden {
   display: none !important;
 }
 
 /* ---------------------------------- index --------------------------------- */
+
 .p-index {
   &__wrapper {
     position: fixed;

@@ -19,7 +19,26 @@
     }
   }
 
+  &.work-slide {
+    .c-header__left {
+      h2 {
+        font-size: 1.7rem;
+      }
+    }
+
+    .c-header__right {
+      p {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
   &__left {
+    h2 {
+      font-family: $test-domaine-fonts;
+      font-weight: 400;
+    }
+
     a {
       font-family: $test-domaine-fonts;
       font-size: 2.2rem;
