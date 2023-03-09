@@ -43,6 +43,14 @@
     }
   }
 
+  &.work-scroll {
+    .c-header__right {
+      @include maxW(834px) {
+        display: none;
+      }
+    }
+  }
+
   &__left {
     h2 {
       font-family: $test-domaine-fonts;

@@ -76,6 +76,20 @@
 
   &.work-scroll {
     display: none;
+
+    @include maxW(834px) {
+      display: block;
+    }
+    
+    .c-footer__wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    .c-footer__left {
+      text-transform: uppercase;
+      font-size: 1.1rem;
+    }
   }
 
   &__right {

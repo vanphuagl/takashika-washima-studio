@@ -39,7 +39,7 @@ $(window).on("load", function () {
     delay: 0.4,
   })
     .to(".c-loading", {
-      duration: 1,
+      duration: 0.8,
       background: "transparent",
       delay: 0.2,
     })
@@ -59,7 +59,7 @@ $(window).on("load", function () {
         opacity: 1,
         delay: 0.2,
       },
-      "-=0.4"
+      "-=0.6"
     )
     .to(
       ".c-loading.work-page > .c-loading__title",
@@ -68,7 +68,7 @@ $(window).on("load", function () {
         opacity: 0,
         delay: 0.2,
       },
-      "-=0.8"
+      "-=1"
     );
 });
 

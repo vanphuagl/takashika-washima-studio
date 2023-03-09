@@ -23,13 +23,13 @@
     h1 {
       font-size: 2.4rem;
       line-height: 2;
+      text-align: start;
     }
 
     @include maxW(834px) {
       padding: 0 15px;
 
       h1 {
-        text-align: start;
         font-size: 1.9rem;
         line-height: 1.66;
         margin-bottom: 10px;
@@ -363,37 +363,6 @@
         width: 85%;
       }
 
-      h2 {
-        font-family: $test-domaine-fonts;
-        font-size: 2.4rem;
-        line-height: 2;
-        font-weight: 400;
-      }
-
-      .text-sub {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-
-        font-size: 1.4rem;
-        line-height: 1.86;
-
-        span {
-          opacity: 0.3;
-          margin-top: -3px;
-        }
-
-        @include maxW(834px) {
-          font-size: 1.2rem;
-          line-height: 2;
-          gap: 10px;
-
-          span {
-            margin-top: 0;
-          }
-        }
-      }
-
       @include maxW(834px) {
         width: 100%;
         h2,
@@ -441,6 +410,11 @@
     font-family: $test-domaine-fonts;
     font-weight: 400;
     font-size: 2.2rem;
+
+    @include maxW(834px) {
+      font-size: 1.7rem !important;
+      line-height: 1.74;
+    }
   }
 
   .text-sub {
@@ -455,6 +429,17 @@
     span {
       opacity: 0.3;
       margin-top: -3px;
+    }
+
+    @include maxW(1023px) {
+      font-size: 1.2rem;
+      line-height: 2rem;
+      gap: 10px;
+      margin-top: 0;
+
+      span {
+        margin-top: 0;
+      }
     }
   }
 }

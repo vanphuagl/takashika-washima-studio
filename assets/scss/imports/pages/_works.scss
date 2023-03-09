@@ -94,7 +94,7 @@
         content: "";
       }
 
-      @include maxW(1023px) {
+      @include maxW(834px) {
         display: none;
       }
     }
@@ -132,6 +132,6 @@
   //   scroll =================
 
   &__scroll {
-    
+
   }
 }
