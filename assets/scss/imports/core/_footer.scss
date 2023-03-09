@@ -3,8 +3,6 @@
 
 .c-footer {
   opacity: 0;
-  position: relative;
-  z-index: 9;
 
   &__wrapper {
     display: grid;
@@ -60,6 +58,9 @@
     .c-footer__right {
       font-size: 1.3rem;
       text-transform: uppercase;
+
+      position: relative;
+      z-index: 9;
 
       a {
         &:first-child {

@@ -47,16 +47,16 @@ $(window).on("load", function () {
       pointerEvents: "none",
       delay: 0,
     })
-    .to(".c-loading.work-page > .c-loading__title", {
-      duration: 0.5,
-      opacity: 0,
-      delay: 0.4,
-    })
     .from(".animate-this", {
       duration: 1,
       opacity: 0,
       stagger: 0.4,
-      delay: 0.2,
+      delay: 0.5,
+    })
+    .to(".c-loading.work-page > .c-loading__title", {
+      duration: 0.5,
+      opacity: 0,
+      delay: 0.4,
     })
     .to(".c-header, .c-footer", {
       duration: 1,
@@ -182,12 +182,12 @@ const swiperWorkFunction = () => {
       on: {
         slideChange: function () {
           let currentSlide = this.realIndex + 1;
-          document.querySelector(".current-slide").innerHTML = "(" + currentSlide;
+          document.querySelector(".current-slide").innerHTML = "( " + currentSlide;
         },
         beforeInit: function () {
           let numOfSlides =
             this.wrapperEl.querySelectorAll(".swiper-slide").length;
-          document.querySelector(".total-slides").innerHTML = "/" + numOfSlides + ")";
+          document.querySelector(".total-slides").innerHTML = numOfSlides + " )";
         },
       },
     });
