@@ -116,8 +116,16 @@
         <section class="p-work animate-this">
             <div class="p-work__container">
                 <div class="p-work__wrapper">
-                    <div class="p-work__scroll">
-                        scroll
+                    <div class="p-work__scroll main ">
+                        <ul id="pwork">
+                            <li class="slide scroll">
+                                <img src="./assets/img/thumbnail-2.jpg" alt="">
+                            </li>
+
+                            <li class="slide scroll">
+                                <img src="./assets/img/thumbnail-2.jpg" alt="">
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -149,6 +157,32 @@
     <script src="./assets/js/libs.js"></script>
     <script src="./assets/js/main.js"></script>
     <!-- @@script -->
+
+    <script>
+        $(function () {
+            var elem = $.jInvertScroll(['.scroll'],
+                {
+                    width: 'auto',
+                    height: 15000,
+                    onScroll: function (percent) {
+                        // console.log(percent);
+                    }
+                });
+
+            if ($(window).width() <= 834) {
+                elem.destroy();
+            }
+
+            $(window).resize(function () {
+                if ($(window).width() <= 834) {
+                    elem.destroy();
+                }
+                else {
+                    elem.reinitialize();
+                }
+            });
+        })
+    </script>
 </body>
 
 </html>

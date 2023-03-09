@@ -132,6 +132,17 @@
   //   scroll =================
 
   &__scroll {
+    z-index: 1;
+    width: 2094.16667vw;
+    height: 100vh;
 
+    ul {
+      display: flex;
+      justify-content: flex-start;
+
+      li {
+        width: 100%;
+      }
+    }
   }
 }
