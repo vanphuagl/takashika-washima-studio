@@ -116,13 +116,13 @@
         <section class="p-work animate-this">
             <div class="p-work__container">
                 <div class="p-work__wrapper">
-                    <div class="p-work__scroll main ">
+                    <div class="p-work__scroll scroll">
                         <ul id="pwork">
-                            <li class="slide scroll">
+                            <li class="slide">
                                 <img src="./assets/img/thumbnail-2.jpg" alt="">
                             </li>
 
-                            <li class="slide scroll">
+                            <li class="slide">
                                 <img src="./assets/img/thumbnail-2.jpg" alt="">
                             </li>
                         </ul>
@@ -159,29 +159,27 @@
     <!-- @@script -->
 
     <script>
-        $(function () {
-            var elem = $.jInvertScroll(['.scroll'],
-                {
-                    width: 'auto',
-                    height: 15000,
-                    onScroll: function (percent) {
-                        // console.log(percent);
-                    }
-                });
+        let elem = $.jInvertScroll(['.scroll'],
+            {
+                width: 'auto',
+                height: 6000,
+                onScroll: function (percent) {
+                    // console.log(percent);
+                }
+            });
 
+        if ($(window).width() <= 834) {
+            elem.destroy();
+        }
+
+        $(window).resize(function () {
             if ($(window).width() <= 834) {
                 elem.destroy();
             }
-
-            $(window).resize(function () {
-                if ($(window).width() <= 834) {
-                    elem.destroy();
-                }
-                else {
-                    elem.reinitialize();
-                }
-            });
-        })
+            else {
+                elem.reinitialize();
+            }
+        });
     </script>
 </body>
 
