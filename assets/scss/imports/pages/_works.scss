@@ -273,3 +273,33 @@
     }
   }
 }
+
+/* -------------------------------- position -------------------------------- */
+
+.p-work__block {
+  &.position-top {
+    align-items: flex-start;
+  }
+
+  &.position-center {
+    align-items: center;
+  }
+
+  &.position-bottom {
+    align-items: flex-end;
+  }
+
+  @include maxW(834px) {
+    &.sp-position-right {
+      justify-content: flex-end;
+    }
+
+    &.sp-position-left {
+      justify-content: flex-start;
+    }
+
+    &.sp-position-center {
+      justify-content: center;
+    }
+  }
+}

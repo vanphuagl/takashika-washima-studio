@@ -99,34 +99,6 @@
   display: flex;
 }
 
-.p-work__block {
-  &.align-top {
-    align-items: flex-start;
-  }
-
-  &.align-middle {
-    align-items: center;
-  }
-
-  &.align-bottom {
-    align-items: flex-end;
-  }
-
-  @include maxW(834px) {
-    &.sp-justify-right {
-      justify-content: flex-end;
-    }
-
-    &.sp-justify-left {
-      justify-content: flex-start;
-    }
-
-    &.sp-justify-center {
-      justify-content: center;
-    }
-  }
-}
-
 /* ---------------------------------- index --------------------------------- */
 
 .p-index {
@@ -306,6 +278,7 @@
 
 /* ---------------------------------- text ---------------------------------- */
 
+
 .p-text {
   &__wrapper {
     position: fixed;
@@ -437,6 +410,8 @@
   }
 }
 
+/* ------------------------------- work scroll ------------------------------ */
+
 .work-scroll-title {
   h2 {
     font-family: $test-domaine-fonts;
@@ -479,6 +454,7 @@
 }
 
 /* ----------------------------- scroll horizon ----------------------------- */
+
 .scroll {
   position: fixed;
   bottom: 0;
