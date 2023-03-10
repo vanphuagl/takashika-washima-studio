@@ -118,12 +118,40 @@
                 <div class="p-work__wrapper">
                     <div class="p-work__scroll scroll">
                         <ul id="pwork">
-                            <li class="slide">
-                                <img src="./assets/img/thumbnail-2.jpg" alt="">
+                            <li class="p-work__block p-work__block--0"></li>
+                            <li class="p-work__block p-work__block--xl">
+                                <figure class="p-work__figure">
+                                    <img src="./assets/img/work-scroll/scroll-1.jpg" alt="Caption">
+                                    <p>Caption 1</p>
+                                </figure>
                             </li>
 
-                            <li class="slide">
-                                <img src="./assets/img/thumbnail-2.jpg" alt="">
+                            <li class="p-work__block p-work__block--m align-middle">
+                                <figure class="p-work__figure">
+                                    <img src="./assets/img/work-scroll/scroll-2.jpg" alt="Caption">
+                                    <p>Caption 2</p>
+                                </figure>
+                            </li>
+
+                            <li class="p-work__block p-work__block--s align-top">
+                                <figure class="p-work__figure">
+                                    <img src="./assets/img/work-scroll/scroll-3.jpg" alt="Caption">
+                                    <p>Caption 3</p>
+                                </figure>
+                            </li>
+
+                            <li class="p-work__block p-work__block--l align-bottom">
+                                <figure class="p-work__figure">
+                                    <img src="./assets/img/work-scroll/scroll-4.jpg" alt="Caption">
+                                    <p>Caption 4</p>
+                                </figure>
+                            </li>
+
+                            <li class="p-work__block p-work__block--s align-middle">
+                                <figure class="p-work__figure">
+                                    <img src="./assets/img/work-scroll/scroll-5.jpg" alt="Caption">
+                                    <p>Caption 5</p>
+                                </figure>
                             </li>
                         </ul>
                     </div>
@@ -157,30 +185,6 @@
     <script src="./assets/js/libs.js"></script>
     <script src="./assets/js/main.js"></script>
     <!-- @@script -->
-
-    <script>
-        let elem = $.jInvertScroll(['.scroll'],
-            {
-                width: 'auto',
-                height: 6000,
-                onScroll: function (percent) {
-                    // console.log(percent);
-                }
-            });
-
-        if ($(window).width() <= 834) {
-            elem.destroy();
-        }
-
-        $(window).resize(function () {
-            if ($(window).width() <= 834) {
-                elem.destroy();
-            }
-            else {
-                elem.reinitialize();
-            }
-        });
-    </script>
 </body>
 
 </html>

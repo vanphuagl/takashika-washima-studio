@@ -95,6 +95,21 @@
   display: none !important;
 }
 
+.align-top {
+  display: flex;
+  align-items: flex-start;
+}
+
+.align-middle {
+  display: flex;
+  align-items: center;
+}
+
+.align-bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
 /* ---------------------------------- index --------------------------------- */
 
 .p-index {
@@ -425,6 +440,8 @@
     font-size: 1.4rem;
     line-height: 1.86;
     margin-top: 10px;
+
+    width: fit-content;
 
     span {
       opacity: 0.3;

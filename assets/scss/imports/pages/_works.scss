@@ -133,16 +133,67 @@
 
   &__scroll {
     z-index: 1;
-    width: 2094.16667vw;
+    width: auto;
     height: 100vh;
 
     ul {
       display: flex;
       justify-content: flex-start;
+      height: 100%;
 
       li {
-        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
+    }
+  }
+
+  &__block {
+    width: 100vw;
+    height: 100%;
+    margin-right: 250px;
+
+    &--0 {
+      width: 50px;
+    }
+
+    &--xl {
+      width: calc(100vw - 262px);
+
+      figure {
+        height: 100%;
+      }
+    }
+
+    &--m {
+      width: 25.5vw;
+    }
+
+    &--s {
+      width: 17vw;
+    }
+
+    &--l {
+      width: 33vw;
+    }
+  }
+
+  &__figure {
+    position: relative;
+    height: auto;
+
+    img {
+      padding-bottom: 35px;
+    }
+
+    p {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      font-size: 1.2rem;
     }
   }
 }

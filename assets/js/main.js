@@ -55,7 +55,7 @@ $(window).on("load", function () {
     .to(
       ".c-header, .c-footer",
       {
-        duration: 0.8,
+        duration: 1,
         opacity: 1,
         delay: 0.2,
       },
@@ -325,53 +325,28 @@ if (document.querySelector(".p-404__wrapper")) {
   });
 }
 
-// var Winsize = {
-//   element: {
-//     w: 0,
-//     h: 0,
-//     sctop: 0,
-//     scleft: 0,
-//     bodyH: 0,
-//     defSpSize: 800,
-//     device: "pc",
-//     winObj: $(window),
-//   },
-//   Init: function (_spWinSize) {
-//     var self = this;
-//     self.element.defSpSize = _spWinSize || self.element.defSpSize; //蠑墓焚縺後↑縺��ｴ蜷医�讓呎ｺ亡P繧ｵ繧､繧ｺ
-//     self.SetSize();
-//     $(window).on("resize", function (e) {
-//       self.SetSize();
-//     });
-//     $(window).on("scroll", function (e) {
-//       self.element.sctop = self.element.winObj.scrollTop();
-//     });
-//   },
-//   W: function () {
-//     return this.element.w;
-//   },
-//   H: function () {
-//     return this.element.h;
-//   },
-//   ScrollTop: function () {
-//     return this.element.sctop;
-//   },
-//   ScrollLeft: function () {
-//     return this.element.scleft;
-//   },
-//   BodyH: function () {
-//     return this.element.bodyH;
-//   },
-//   Device: function () {
-//     return this.element.device;
-//   },
-//   SetSize: function () {
-//     var self = this.element;
-//     self.w = $(window).width();
-//     self.h = $(window).height();
-//     self.sctop = $(window).scrollTop();
-//     self.bodyH = $("body").outerHeight();
+/* ---------------------------- horizontal scroll --------------------------- */
 
-//     $(".p-work__scroll").css("height", self.h);
-//   },
-// };
+const horizontalFunc = () => {
+  let elem = $.jInvertScroll([".scroll"], {
+    width: "auto",
+    height: 3000,
+    onScroll: function (percent) {
+      // console.log(percent);
+    },
+  });
+
+  if ($(window).width() <= 834) {
+    elem.destroy();
+  }
+
+  $(window).resize(function () {
+    if ($(window).width() <= 834) {
+      elem.destroy();
+    } else {
+      elem.reinitialize();
+    }
+  });
+};
+
+horizontalFunc();
