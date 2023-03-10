@@ -2,7 +2,7 @@
 ------------------------------------------------------------*/
 
 .c-header {
-  opacity: 0;
+
 
   &__wrapper {
     position: fixed;
@@ -52,6 +52,7 @@
   }
 
   &__left {
+    opacity: 0;
     h2 {
       font-family: $test-domaine-fonts;
       font-weight: 400;
@@ -69,6 +70,7 @@
   }
 
   &__right {
+    opacity: 0;
     font-size: 1.3rem;
     a {
       text-transform: uppercase;

@@ -47,13 +47,13 @@ $(window).on("load", function () {
       pointerEvents: "none",
     })
     .from(".animate-this", {
-      duration: 1,
+      duration: 0.8,
       opacity: 0,
       stagger: 0.4,
       delay: 0.2,
     })
     .to(
-      ".c-header, .c-footer",
+      ".c-header__left, .c-header__right, .c-footer",
       {
         duration: 1,
         opacity: 1,
@@ -327,26 +327,27 @@ if (document.querySelector(".p-404__wrapper")) {
 
 /* ---------------------------- horizontal scroll --------------------------- */
 
-const horizontalFunc = () => {
-  let elem = $.jInvertScroll([".scroll"], {
-    width: "auto",
-    height: 3500,
-    onScroll: function (percent) {
-      // console.log(percent);
-    },
-  });
+if (document.querySelector(".work-scroll")) {
+  const horizontalFunc = () => {
+    let elem = $.jInvertScroll([".scroll"], {
+      width: "auto",
+      height: 3500,
+      onScroll: function (percent) {
+        // console.log(percent);
+      },
+    });
 
-  if ($(window).width() <= 834) {
-    elem.destroy();
-  }
-
-  $(window).resize(function () {
     if ($(window).width() <= 834) {
       elem.destroy();
-    } else {
-      elem.reinitialize();
     }
-  });
-};
 
-horizontalFunc();
+    $(window).resize(function () {
+      if ($(window).width() <= 834) {
+        elem.destroy();
+      } else {
+        elem.reinitialize();
+      }
+    });
+  };
+  horizontalFunc();
+}
