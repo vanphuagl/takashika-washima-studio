@@ -9,6 +9,12 @@
     width: 100%;
 
     @include mid(true);
+
+    &.work-scroll {
+      position: relative;
+      height: auto;
+      padding: 0 15px;
+    }
   }
 
   //   slide =================
@@ -149,6 +155,30 @@
         }
       }
     }
+
+    .content-text {
+      margin-bottom: 90px;
+      margin-top: 160px;
+
+      p,
+      a {
+        font-size: 1.2rem;
+        line-height: 1.79;
+      }
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    @include maxW(834px) {
+      height: auto;
+      margin-top: 180px;
+
+      ul {
+        display: block;
+        padding: 0 15px;
+      }
+    }
   }
 
   &__block {
@@ -156,16 +186,21 @@
     height: 100%;
     margin-right: 250px;
 
-    &--0 {
-      width: 50px;
+    &:first-child {
+      margin-left: 300px;
     }
 
     &--xl {
       width: calc(100vw - 262px);
+      display: block !important;
 
       figure {
         height: 100%;
       }
+    }
+
+    &--l {
+      width: 33vw;
     }
 
     &--m {
@@ -176,8 +211,38 @@
       width: 17vw;
     }
 
-    &--l {
-      width: 33vw;
+    @include maxW(834px) {
+      width: 100% !important;
+      margin-right: 0;
+      margin-bottom: 120px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &--xl {
+        figure {
+          width: 100%;
+        }
+      }
+
+      &--l {
+        figure {
+          width: 80%;
+        }
+      }
+
+      &--m {
+        figure {
+          width: 60%;
+        }
+      }
+
+      &--s {
+        figure {
+          width: 40%;
+        }
+      }
     }
   }
 
@@ -194,6 +259,16 @@
       bottom: 10px;
       left: 0;
       font-size: 1.2rem;
+    }
+
+    @include maxW(834px) {
+      img {
+        padding-bottom: 0;
+      }
+
+      p {
+        bottom: -20px;
+      }
     }
   }
 }

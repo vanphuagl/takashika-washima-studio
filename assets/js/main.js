@@ -330,7 +330,7 @@ if (document.querySelector(".p-404__wrapper")) {
 const horizontalFunc = () => {
   let elem = $.jInvertScroll([".scroll"], {
     width: "auto",
-    height: 3000,
+    height: 3500,
     onScroll: function (percent) {
       // console.log(percent);
     },
