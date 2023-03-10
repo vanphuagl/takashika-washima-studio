@@ -488,6 +488,7 @@
 
   @include maxW(834px) {
     position: relative;
+    left: 0 !important;
     height: auto !important;
   }
 }
