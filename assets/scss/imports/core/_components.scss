@@ -16,6 +16,11 @@
 
   background-color: $gray-cl;
 
+  &.home-page {
+    mix-blend-mode: difference;
+    filter: invert(1);
+  }
+
   &.work-page {
     justify-content: flex-start;
     padding: 0 35px;
@@ -135,7 +140,7 @@
     padding: 25px 35px;
 
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
 
     @include maxW(834px) {
@@ -466,5 +471,13 @@
     position: relative;
     left: 0 !important;
     height: auto !important;
+  }
+}
+
+/* -------------------------------- keyframes ------------------------------- */
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+    transform: none;
   }
 }
