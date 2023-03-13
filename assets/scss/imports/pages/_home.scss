@@ -13,28 +13,6 @@
     }
   }
 
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  &__items {
-    width: 50%;
-    margin-top: 300px;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &.s-size {
-      figure {
-        width: 70%;
-      }
-    }
-  }
-
   &__figure:hover {
     img {
       filter: invert(1);
@@ -95,7 +73,6 @@
   }
 
   &__bottom {
-    margin-top: 250px;
     margin-bottom: 145px;
 
     h2 {
@@ -176,21 +153,80 @@
   }
 }
 
-/* -------------------------------- position -------------------------------- */
+/* -------------------------------- masonary -------------------------------- */
 
-.p-top__items {
-  &.position-right {
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
+.p-top__grid {
+  margin: 0 auto;
 
-  &.position-left {
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
+  .grid-item {
+    width: 50%;
+    height: auto;
+    margin-bottom: 300px;
 
-  &.position-center {
-    justify-content: center;
-    // align-items: center;
+    &:nth-child(odd) {
+      left: 0 !important;
+      right: auto !important;
+    }
+    &:nth-child(even) {
+      left: auto !important;
+      right: 0 !important;
+    }
+
+    &:nth-child(2) {
+      margin-top: 300px;
+    }
+
+    &.l-size,
+    &.xl-size {
+      margin-left: -50px;
+      margin-right: -50px;
+      margin-bottom: 250px;
+    }
+
+    &.xl-size {
+      width: 100vw;
+    }
+
+    &.l-size {
+      width: 80vw;
+    }
+
+    &.m-size {
+      figure {
+        width: 100%;
+      }
+    }
+
+    &.s-size {
+      figure {
+        width: 70%;
+      }
+    }
+
+    &.xs-size {
+      figure {
+        width: 50%;
+      }
+    }
+
+    &.position-right {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    &.position-left {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    &.position-center {
+      justify-content: center;
+      align-items: center;
+    }
   }
+}
+
+.grid-item.l-size + div + div,
+.grid-item.xl-size + div + div {
+  margin-top: 300px;
 }

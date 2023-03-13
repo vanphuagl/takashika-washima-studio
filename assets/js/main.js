@@ -351,3 +351,23 @@ if (document.querySelector(".work-scroll")) {
   };
   horizontalFunc();
 }
+
+/* -------------------------------- masonary -------------------------------- */
+
+if (document.querySelector(".p-top__grid")) {
+  let colWidth = $(".grid-item").width();
+
+  window.onresize = function () {
+    let colWidth = $(".grid-item").width();
+  };
+
+  let $grid = $(".p-top__grid").masonry({
+    // options
+    itemSelector: ".grid-item",
+    columnWidth: ".grid-item",
+  });
+
+  $grid.imagesLoaded().progress(function () {
+    $grid.masonry("layout");
+  });
+}
