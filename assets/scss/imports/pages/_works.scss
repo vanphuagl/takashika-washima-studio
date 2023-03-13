@@ -190,7 +190,7 @@
       margin-left: 300px;
     }
 
-    &--xl {
+    &.size-xl {
       width: calc(100vw - 262px);
       display: block !important;
 
@@ -199,15 +199,15 @@
       }
     }
 
-    &--l {
+    &.size-l {
       width: 33vw;
     }
 
-    &--m {
+    &.size-m {
       width: 25.5vw;
     }
 
-    &--s {
+    &.size-s {
       width: 17vw;
     }
 
@@ -220,27 +220,27 @@
         margin-left: 0;
       }
 
-      &--xl {
+      &.sp-size-xl {
         figure {
-          width: 100%;
+          width: 100% !important;
         }
       }
 
-      &--l {
+      &.sp-size-l {
         figure {
-          width: 80%;
+          width: 80% !important;
         }
       }
 
-      &--m {
+      &.sp-size-m {
         figure {
-          width: 60%;
+          width: 60% !important;
         }
       }
 
-      &--s {
+      &.sp-size-s {
         figure {
-          width: 40%;
+          width: 40% !important;
         }
       }
     }

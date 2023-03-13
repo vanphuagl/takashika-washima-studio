@@ -5,11 +5,15 @@
 .p-top {
   margin-top: 120px;
 
+  @include maxW(834px) {
+    margin-top: 80px;
+  }
+
   &__wrapper {
     padding: 0 50px;
 
     @include maxW(834px) {
-      padding: 0 15px;
+      padding: 0 30px;
     }
   }
 
@@ -24,6 +28,12 @@
 
       span {
         transform: translate(0, 0);
+      }
+    }
+
+    @include maxW(834px) {
+      img {
+        filter: unset;
       }
     }
   }
@@ -70,6 +80,10 @@
       line-height: 2;
       overflow: hidden;
     }
+
+    @include maxW(834px) {
+      display: none;
+    }
   }
 
   &__bottom {
@@ -86,7 +100,6 @@
     }
 
     @include maxW(834px) {
-      margin-top: 150px;
       margin-bottom: 90px;
 
       h2 {
@@ -163,6 +176,11 @@
     height: auto;
     margin-bottom: 300px;
 
+    @include maxW(834px) {
+      width: 100%;
+      margin-bottom: 150px;
+    }
+
     &:nth-child(odd) {
       left: 0 !important;
       right: auto !important;
@@ -174,36 +192,50 @@
 
     &:nth-child(2) {
       margin-top: 300px;
+
+      @include maxW(834px) {
+        margin-top: 0;
+      }
     }
 
-    &.l-size,
-    &.xl-size {
+    &.size-l,
+    &.size-xl {
       margin-left: -50px;
       margin-right: -50px;
       margin-bottom: 250px;
+
+      @include maxW(834px) {
+        margin-left: -30px;
+        margin-right: -30px;
+        margin-bottom: 150px;
+      }
     }
 
-    &.xl-size {
+    &.size-xl {
       width: 100vw;
     }
 
-    &.l-size {
+    &.size-l {
       width: 80vw;
+
+      @include maxW(834px) {
+        width: 100vw;
+      }
     }
 
-    &.m-size {
+    &.size-m {
       figure {
         width: 100%;
       }
     }
 
-    &.s-size {
+    &.size-s {
       figure {
         width: 70%;
       }
     }
 
-    &.xs-size {
+    &.size-xs {
       figure {
         width: 50%;
       }
@@ -223,10 +255,61 @@
       justify-content: center;
       align-items: center;
     }
+
+    @include maxW(834px) {
+      &.sp-size-xl {
+        width: 100vw !important;
+
+        figure {
+          img {
+            aspect-ratio: 1/1;
+          }
+        }
+      }
+
+      &.sp-size-l {
+        width: 100vw !important;
+      }
+
+      &.sp-size-m {
+        figure {
+          width: 100% !important;
+        }
+      }
+
+      &.sp-size-s {
+        figure {
+          width: 70% !important;
+        }
+      }
+
+      &.sp-size-xs {
+        figure {
+          width: 50% !important;
+        }
+      }
+
+      &.sp-position-right {
+        justify-content: flex-end !important;
+        align-items: flex-end !important;
+      }
+
+      &.sp-position-left {
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+      }
+
+      &.sp-position-center {
+        justify-content: center !important;
+        align-items: center !important;
+      }
+    }
   }
 }
 
-.grid-item.l-size + div + div,
-.grid-item.xl-size + div + div {
-  margin-top: 300px;
+@include minW(835px) {
+  .grid-item.size-l + div + div,
+  .grid-item.size-xl + div + div {
+    margin-top: 300px;
+  }
 }

@@ -140,7 +140,7 @@
     padding: 25px 35px;
 
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: space-between;
 
     @include maxW(834px) {
@@ -445,7 +445,7 @@
       margin-top: -3px;
     }
 
-    @include maxW(1023px) {
+    @include maxW(834px) {
       font-size: 1.2rem;
       line-height: 2rem;
       gap: 10px;
