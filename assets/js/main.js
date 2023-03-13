@@ -371,3 +371,18 @@ if (document.querySelector(".p-top__grid")) {
     $grid.masonry("layout");
   });
 }
+
+/* ------------------------ scroll change background ------------------------ */
+
+const homeBottom = document.querySelector(".p-top__bottom");
+
+window.onscroll = function () {
+  // scroller
+  if (homeBottom) {
+    if (window.scrollY + 1000 > homeBottom.offsetTop) {
+      document.body.classList.add("is-change-bg");
+    } else {
+      document.body.classList.remove("is-change-bg");
+    }
+  }
+};

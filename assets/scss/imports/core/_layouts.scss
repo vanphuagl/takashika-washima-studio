@@ -24,6 +24,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
 
+  transition: background-color .5s;
+
   &::after {
     content: "";
     position: fixed;
@@ -44,6 +46,10 @@ body {
 
   &.active {
     overflow: hidden;
+  }
+
+  &.is-change-bg {
+    background-color: #bebebe;
   }
 }
 
