@@ -30,6 +30,16 @@ appHeight();
   });
 });
 
+//
+
+history.scrollRestoration = "manual";
+
+$(window).on("beforeunload", function () {
+  $(window).scrollTop(0);
+});
+
+//
+
 $(window).on("load", function () {
   const tl = gsap.timeline();
 
@@ -51,6 +61,9 @@ $(window).on("load", function () {
       opacity: 0,
       stagger: 0.4,
       delay: 0.2,
+    })
+    .set("body", {
+      overflowY: "auto",
     })
     .to(
       ".c-header__left, .c-header__right, .c-footer",
