@@ -1,0 +1,24 @@
+/* -------------------------------------------------------------------------- */
+/*                                  404 page                                  */
+/* -------------------------------------------------------------------------- */
+
+.p-404 {
+  &__container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+  }
+
+  &__wrapper > span {
+    display: inline-block;
+    font-family: fantasy;
+    font-size: 25vw;
+    letter-spacing: 20px;
+    font-weight: bold;
+    position: relative;
+  }
+}

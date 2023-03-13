@@ -333,7 +333,7 @@ if (document.querySelector(".p-404__wrapper")) {
   gsap.from(".p-404__wrapper > span", 1.5, {
     top: "-100vh",
     ease: "bounce.out",
-    delay: 1,
+    delay: 3,
     stagger: 0.2,
   });
 }
