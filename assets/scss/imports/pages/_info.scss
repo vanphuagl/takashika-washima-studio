@@ -157,6 +157,7 @@
     p {
       font-size: 1.4rem;
       line-height: 1.93;
+      margin-right: 5px;
     }
 
     @include maxW(834px) {
@@ -165,6 +166,7 @@
       p {
         font-size: 1.3rem;
         line-height: 1.77;
+        margin-right: 0;
       }
     }
   }
