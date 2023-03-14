@@ -68,6 +68,12 @@
 
   &__title {
     opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &.fadeout {
+      opacity: 0 !important;
+    }
+
     h1 {
       font-family: $test-domaine-fonts;
       font-size: 6.2rem;

@@ -388,14 +388,17 @@ if (document.querySelector(".p-top__grid")) {
 /* ------------------------ scroll change background ------------------------ */
 
 const homeBottom = document.querySelector(".p-top__bottom");
+const loadingTitle = document.querySelector(".c-loading__title");
 
 window.onscroll = function () {
   // scroller
   if (homeBottom) {
-    if (window.scrollY + 1000 > homeBottom.offsetTop) {
+    if (window.scrollY + 850 > homeBottom.offsetTop) {
       document.body.classList.add("is-change-bg");
+      loadingTitle.classList.add("fadeout");
     } else {
       document.body.classList.remove("is-change-bg");
+      loadingTitle.classList.remove("fadeout");
     }
   }
 };

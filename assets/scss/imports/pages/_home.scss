@@ -176,6 +176,14 @@
     height: auto;
     margin-bottom: 300px;
 
+    &:hover {
+      opacity: 1 !important;
+
+      img {
+        opacity: 1 !important
+      }
+    }
+
     @include maxW(834px) {
       width: 100%;
       margin-bottom: 150px;
