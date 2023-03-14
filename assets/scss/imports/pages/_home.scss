@@ -180,7 +180,7 @@
       opacity: 1 !important;
 
       img {
-        opacity: 1 !important
+        opacity: 1 !important;
       }
     }
 
@@ -315,9 +315,11 @@
   }
 }
 
-@include minW(835px) {
-  .grid-item.size-l + div + div,
-  .grid-item.size-xl + div + div {
-    margin-top: 300px;
+.grid-item.size-l + div + div,
+.grid-item.size-xl + div + div {
+  margin-top: 300px;
+
+  @include maxW(835px) {
+    margin-top: 0;
   }
 }
